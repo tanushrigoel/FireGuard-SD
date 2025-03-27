@@ -25,7 +25,7 @@ import {
 const Router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Layout />}>
+      <Route path="/FireGuard-SD/" element={<Layout />}>
         <Route path="home" element={<HomePage />} />
         <Route path="maps" element={<MapsPage />} />
         <Route path="reports" element={<ReportFire />} />
@@ -47,8 +47,8 @@ const Router = createBrowserRouter(
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HashRouter>
+    
       <RouterProvider router={Router} />
-    </HashRouter>
+    
   </StrictMode>
 );

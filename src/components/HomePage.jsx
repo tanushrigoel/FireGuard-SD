@@ -1,5 +1,5 @@
 import React from "react";
-import brigade from "../assets/brigade.jpg";
+import brigade from "/brigade.jpg";
 import { Card1, Card2 } from "./HomePageComponents";
 import MapComponent from "./MapComponent";
 export function HomePage() {
