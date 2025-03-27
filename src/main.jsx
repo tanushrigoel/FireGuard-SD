@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import Layout, { NoNavbarRoutes } from "./layout.jsx";
 import { HomePage } from "./components/HomePage.jsx";
-import { RouterProvider } from "react-router-dom";
+import { RouterProvider, HashRouter } from "react-router-dom";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -17,7 +17,10 @@ import {
   DownloadResources,
   SafetyTipsAndCommunityResources,
 } from "./components/SafetyTips.jsx";
-import {FireStationLogin,  FireStation } from "./components/FireStationPage.jsx";
+import {
+  FireStationLogin,
+  FireStation,
+} from "./components/FireStationPage.jsx";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,14 +39,16 @@ const Router = createBrowserRouter(
           <Route path="download" element={<DownloadResources />} />
         </Route>
       </Route>
-      <Route path='/firestation' element={<FireStation/>}/>
-      <Route path='/firestation/login' element={<FireStationLogin/>}/>
+      <Route path="/firestation" element={<FireStation />} />
+      <Route path="/firestation/login" element={<FireStationLogin />} />
     </>
   )
 );
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={Router} />
+    <HashRouter>
+      <RouterProvider router={Router} />
+    </HashRouter>
   </StrictMode>
 );
