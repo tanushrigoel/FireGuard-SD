@@ -5,4 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: "/FireGuard-SD/",
   plugins: [react(),tailwindcss()],
+  build: {
+    outDir: "dist",
+  },
 })
