@@ -3,14 +3,21 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 export default function MapPage() {
-  const [incidents,setincidents] = useState([]);
-  const [fireStations,setfireStations]=useState([]);
-  const [emergencyContacts,setemergencyContacts]=useState([]);
+  const [incidents, setincidents] = useState([
+    { location: "Connaught Place", status: "Active", risk: "High" },
+    { location: "Bandra, Mumbai", status: "Under Control", risk: "Medium" },
+  ]);
+  const [fireStations, setfireStations] = useState([
+    { name: "Connaught Place Fire Station", distance: "2.5 km" },
+    { name: "Bandra Fire Station", distance: "5.0 km" },
+  ]);
+  const [emergencyContacts, setemergencyContacts] = useState([
+    { name: "Fire Department", number: "100" },
+    { name: "National Disaster Response Force (NDRF)", number: "1078" },
+  ]);
   useEffect(() => {
-    ;(async () => {
-      const response = await axios.get(
-        "http://localhost:5000/mapspage"
-      );
+    (async () => {
+      const response = await axios.get("http://localhost:5000/mapspage");
       setincidents(response.data[0]);
       setfireStations(response.data[1]);
       setemergencyContacts(response.data[2]);

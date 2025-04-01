@@ -4,8 +4,7 @@ import { useState ,useEffect} from "react";
 
 export function FireAlertsWeatherResponseCard() {
   const [expandedIndex, setExpandedIndex] = useState(null);
-
-  const alerts = [
+  const [alerts,setalerts]=useState([
     { 
       location: "📍 Downtown, LA", 
       time: "⏳ 10 mins ago", 
@@ -51,7 +50,8 @@ export function FireAlertsWeatherResponseCard() {
       windSpeed: "💨 10 km/h",
       humidity: "💧 60%",
     }
-  ];
+  ]);
+  
 
   return (
     <div className="bg-white p-5 shadow-md rounded-lg w-full border border-gray-200">
